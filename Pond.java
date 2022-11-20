@@ -29,12 +29,19 @@ public class Pond implements Runnable{
                                 f.remove(index2);
                             } else if(f1 == "f" && f2 == "f"){
                                 f.remove(index1);
+                            } else if(f1 == "f" && f2 == "m"){
+                                index1 = rand.nextInt(f.size());
+                                index2 = rand.nextInt(f.size());
+                                f.add(f.get(index1));
+                                f.add(f.get(index2));
                             } else {
                                 index1 = rand.nextInt(f.size());
                                 index2 = rand.nextInt(f.size());
                                 f.add(f.get(index1));
                                 f.add(f.get(index2));
                             }
+                            System.out.println("The Thread that performed this meeting : "+Thread.currentThread().getName());
+                            System.out.println("Size of the pond now is: " + f.size());
                             System.out.println("The fishes left in the pond are:");
                             System.out.println(f);
                         }
